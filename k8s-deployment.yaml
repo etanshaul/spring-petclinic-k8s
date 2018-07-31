@@ -1,0 +1,23 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: skaffold-spring-boot
+spec:
+  selector:
+    matchLabels:
+      app: skaffold-spring-boot
+  replicas: 1
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: skaffold-spring-boot
+        tier: frontend
+    spec:
+      containers:
+      - name: skaffold-spring-boot
+        image: gcr.io/eshaul-work/skaffold-spring-boot
+        ports:
+        - containerPort: 8080
+          name: http-server
+        - containerPort: 8081
+          name: management
