@@ -3,12 +3,13 @@ kind: Config
 build:
   artifacts:
   - imageName: gcr.io/eshaul-work/skaffold-spring-boot
+  local: {}
 deploy:
   kubectl:
     manifests:
       - ./k8s-*
-profiles:
-  - name: gcb
-    build:
-      googleCloudBuild:
-        projectId: eshaul-work
+#profiles:
+#  - name: gcb
+#    build:
+#      googleCloudBuild:
+#        projectId: eshaul-work
