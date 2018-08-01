@@ -6,7 +6,7 @@ spec:
   type: LoadBalancer
   ports:
   - port: 8080
-    targetPort: http-server
+    targetPort: 8080
   selector:
     app: skaffold-spring-boot
     tier: frontend
